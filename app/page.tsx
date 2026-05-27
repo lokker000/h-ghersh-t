@@ -21,7 +21,7 @@ export default function Home() {
       </div>
 
       <div className="mb-8">
-        <div className="border-3 border-black bg-retro-yellow p-4 mb-6 text-center" style={{ borderWidth: "3px" }}>
+        <div className="border-3 border-black bg-retro-white p-4 mb-6 text-center" style={{ borderWidth: "3px" }}>
           <h2 className="text-2xl font-bold">✦ productos destacados ✦</h2>
           <p className="text-sm">selección especial para internet souls</p>
         </div>
@@ -34,7 +34,7 @@ export default function Home() {
       </div>
 
       <div className="text-center">
-        <div className="border-3 border-black bg-retro-yellow inline-block p-6 shadow-[4px_4px_0px_#000]" style={{ borderWidth: "3px" }}>
+        <div className="border-3 border-black bg-retro-white inline-block p-6 shadow-[4px_4px_0px_#000]" style={{ borderWidth: "3px" }}>
           <h3 className="font-bold text-xl mb-2">¿listo para elevar tu estilo?</h3>
           <p className="text-sm mb-4">explora nuestro catálogo completo</p>
           <p className="text-2xl">✦ ✧ ✩</p>

@@ -11,9 +11,9 @@ interface ProductCardProps {
 
 export default function ProductCard({ product }: ProductCardProps) {
   return (
-    <div className="border-3 border-black bg-retro-cream shadow-[4px_4px_0px_#000] p-4 flex flex-col" style={{ borderWidth: "3px" }}>
+    <div className="border-3 border-black bg-[#f4f4f1]/78 backdrop-blur-sm shadow-[4px_4px_0px_#000] p-4 flex flex-col transition-all duration-300 ease-out hover:scale-[1.02] hover:shadow-[6px_6px_0px_#000]" style={{ borderWidth: "3px" }}>
       {/* Image placeholder */}
-      <div className="aspect-square bg-gradient-to-br from-retro-yellow to-retro-orange border-2 border-black mb-4 flex items-center justify-center">
+      <div className="aspect-square bg-gradient-to-br from-[#f4f4f1]/80 to-[#e9e9e4]/80 backdrop-blur-sm border-2 border-black mb-4 flex items-center justify-center">
         <span className="text-4xl">✦</span>
       </div>
 
@@ -36,7 +36,7 @@ export default function ProductCard({ product }: ProductCardProps) {
       <div className="space-y-2">
         <RetroButton
           onClick={() => handleBuyNow(product)}
-          variant="yellow"
+          variant="white"
           className="w-full"
         >
           Comprar ahora

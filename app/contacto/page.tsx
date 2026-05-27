@@ -4,14 +4,14 @@ export default function Contacto() {
   return (
     <div className="container mx-auto px-4 py-8">
       {/* Page header */}
-      <div className="border-3 border-black bg-retro-yellow p-6 mb-8 text-center shadow-[4px_4px_0px_#000]" style={{ borderWidth: "3px" }}>
+      <div className="border-3 border-black bg-retro-white p-6 mb-8 text-center shadow-[4px_4px_0px_#000]" style={{ borderWidth: "3px" }}>
         <h1 className="text-3xl md:text-4xl font-bold mb-2">✦ contacto ✦</h1>
         <p className="text-sm">¿tienes dudas? escríbenos</p>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
         {/* Contact info */}
-        <div className="border-3 border-black bg-retro-yellow p-6 shadow-[4px_4px_0px_#000]" style={{ borderWidth: "3px" }}>
+        <div className="border-3 border-black bg-retro-white p-6 shadow-[4px_4px_0px_#000]" style={{ borderWidth: "3px" }}>
           <h2 className="text-2xl font-bold mb-4">✧ contáctanos ✧</h2>
           <p className="text-sm mb-4">
             ¿Tienes dudas sobre tallas, drops o envíos? Escríbenos y te responderemos lo antes posible.
@@ -65,7 +65,7 @@ export default function Contacto() {
               />
             </div>
             
-            <RetroButton variant="yellow" className="w-full" type="button">
+            <RetroButton variant="white" className="w-full" type="button">
               enviar mensaje
             </RetroButton>
           </form>
@@ -77,7 +77,7 @@ export default function Contacto() {
       </div>
 
       {/* Quick contact buttons */}
-      <div className="border-2 border-black bg-retro-yellow p-4 text-center">
+      <div className="border-2 border-black bg-retro-white p-4 text-center">
         <p className="font-bold mb-3">✧ contacto rápido ✦</p>
         <div className="flex flex-col sm:flex-row gap-3 justify-center">
           <a

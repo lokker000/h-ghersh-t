@@ -14,10 +14,10 @@ export default function CheckoutPage({ params }: CheckoutPageProps) {
   if (!product) {
     return (
       <div className="container mx-auto px-4 py-8">
-        <div className="border-3 border-black bg-retro-yellow p-6 text-center shadow-[4px_4px_0px_#000]" style={{ borderWidth: "3px" }}>
+        <div className="border-3 border-black bg-retro-white p-6 text-center shadow-[4px_4px_0px_#000]" style={{ borderWidth: "3px" }}>
           <h1 className="text-2xl font-bold mb-4">✦ producto no encontrado ✦</h1>
           <Link href="/catalogo">
-            <RetroButton variant="yellow">volver al catálogo</RetroButton>
+            <RetroButton variant="white">volver al catálogo</RetroButton>
           </Link>
         </div>
       </div>
@@ -27,7 +27,7 @@ export default function CheckoutPage({ params }: CheckoutPageProps) {
   return (
     <div className="container mx-auto px-4 py-8">
       {/* Page header */}
-      <div className="border-3 border-black bg-retro-yellow p-6 mb-8 text-center shadow-[4px_4px_0px_#000]" style={{ borderWidth: "3px" }}>
+      <div className="border-3 border-black bg-retro-white p-6 mb-8 text-center shadow-[4px_4px_0px_#000]" style={{ borderWidth: "3px" }}>
         <h1 className="text-3xl md:text-4xl font-bold mb-2">✦ checkout ✦</h1>
         <p className="text-sm">compra directa vía Flow</p>
       </div>
@@ -49,7 +49,7 @@ export default function CheckoutPage({ params }: CheckoutPageProps) {
         </div>
 
         {/* Checkout info */}
-        <div className="border-3 border-black bg-retro-yellow p-6 shadow-[4px_4px_0px_#000]" style={{ borderWidth: "3px" }}>
+        <div className="border-3 border-black bg-retro-white p-6 shadow-[4px_4px_0px_#000]" style={{ borderWidth: "3px" }}>
           <h2 className="text-2xl font-bold mb-4">✦ información de pago ✦</h2>
           
           <div className="border-2 border-black bg-retro-cream p-4 mb-4">
@@ -88,7 +88,7 @@ export default function CheckoutPage({ params }: CheckoutPageProps) {
           </div>
 
           <Link href="/catalogo">
-            <RetroButton variant="yellow" className="w-full">
+            <RetroButton variant="white" className="w-full">
               volver al catálogo
             </RetroButton>
           </Link>

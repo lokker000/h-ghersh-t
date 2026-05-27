@@ -5,13 +5,13 @@ import { ButtonHTMLAttributes, ReactNode } from "react";
 interface RetroButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   children: ReactNode;
   href?: string;
-  variant?: "yellow" | "cream" | "orange";
+  variant?: "white" | "cream" | "orange";
 }
 
 export default function RetroButton({
   children,
   href,
-  variant = "yellow",
+  variant = "white",
   className = "",
   ...props
 }: RetroButtonProps) {
@@ -19,9 +19,9 @@ export default function RetroButton({
     "border-2 border-black shadow-[2px_2px_0px_#000] px-4 py-2 font-semibold transition-all hover:translate-x-1 hover:translate-y-1 hover:shadow-none text-sm";
 
   const variantStyles = {
-    yellow: "bg-retro-yellow hover:bg-retro-orange",
-    cream: "bg-retro-cream hover:bg-retro-yellow",
-    orange: "bg-retro-orange hover:bg-retro-yellow",
+    white: "bg-retro-white hover:bg-[#deded8]",
+    cream: "bg-retro-cream hover:bg-retro-white",
+    orange: "bg-retro-orange hover:bg-retro-white",
   };
 
   const buttonContent = (
