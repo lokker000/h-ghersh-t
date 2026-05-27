@@ -1,0 +1,27 @@
+@import "tailwindcss";
+
+:root {
+  --background: #E6D5F7; /* Pastel lilac */
+  --foreground: #000000; /* Black */
+  --retro-yellow: #FFF3B0; /* Pastel yellow */
+  --retro-cream: #FFF9E6; /* Cream */
+  --retro-orange: #FFB347; /* Orange accent */
+  --retro-blue: #87CEEB; /* Sky blue accent */
+  --retro-green: #98FB98; /* Pale green accent */
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-retro-yellow: var(--retro-yellow);
+  --color-retro-cream: var(--retro-cream);
+  --color-retro-orange: var(--retro-orange);
+  --color-retro-blue: var(--retro-blue);
+  --color-retro-green: var(--retro-green);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
