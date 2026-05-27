@@ -26,9 +26,12 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="border-2 border-black bg-retro-cream p-4 text-center mb-8">
-        <p className="font-bold">✧ higher mind ✦ lost website ✧ web archive ✧</p>
-        <p className="text-sm mt-1">internet souls only</p>
+      <div className="relative border-2 border-black shadow-[4px_4px_0px_#000] p-4 text-center mb-8 overflow-hidden" style={{ backgroundImage: "url('/chief.jpg')", backgroundSize: "100% 100%", backgroundPosition: "center", backgroundRepeat: "no-repeat" }}>
+        <div className="absolute inset-0 bg-[#f4f4f1]/70 backdrop-blur-[1px] z-0" />
+        <div className="relative z-10">
+          <p className="font-bold">✧ higher mind ✦ lost website ✧ web archive ✧</p>
+          <p className="text-sm mt-1">internet souls only</p>
+        </div>
       </div>
 
       <div className="text-center">
