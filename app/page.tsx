@@ -1,31 +1,29 @@
 import Hero from "@/components/Hero";
-import RetroBox from "@/components/RetroBox";
-import ProductGrid from "@/components/ProductGrid";
-import { products } from "@/data/products";
 
 export default function Home() {
-  const featuredProducts = products.slice(0, 4);
-
   return (
     <div className="container mx-auto px-4 py-8">
       <Hero />
 
       <div className="mb-8">
-        <RetroBox title="site update" bgColor="bg-retro-cream">
-          <p className="text-sm">
-            Bienvenido a h!gher sh!t — nuestra tienda oficial de ropa con estética
-            internet-core y energía dosmilera. Nuevos drops disponibles.
-          </p>
-          <p className="text-xs mt-2 text-gray-600">✦ updated: may 2026 ✦</p>
-        </RetroBox>
-      </div>
+        <div className="relative border-3 border-black shadow-[4px_4px_0px_#000] overflow-hidden" style={{ borderWidth: "3px", backgroundImage: "url('/om.jpg')", backgroundSize: "100% 100%", backgroundPosition: "center", backgroundRepeat: "no-repeat" }}>
+          {/* Overlay for text readability */}
+          <div className="absolute inset-0 bg-[#f4f4f1]/70 backdrop-blur-[1px] z-0" />
 
-      <div className="mb-8">
-        <div className="border-3 border-black bg-retro-white p-4 mb-6 text-center" style={{ borderWidth: "3px" }}>
-          <h2 className="text-2xl font-bold">✦ productos destacados ✦</h2>
-          <p className="text-sm">selección especial para internet souls</p>
+          {/* Content */}
+          <div className="relative z-10">
+            <div className="border-b-2 border-black bg-[#f4f4f1]/75 px-4 py-2">
+              <h3 className="font-bold">site update</h3>
+            </div>
+            <div className="p-4">
+              <p className="text-sm font-bold">
+                Bienvenido a h!gher sh!t — nuestra tienda oficial de ropa con estética
+                internet-core y energía dosmilera. Nuevos drops disponibles.
+              </p>
+              <p className="text-xs mt-2 text-gray-600 font-bold">✦ updated: may 2026 ✦</p>
+            </div>
+          </div>
         </div>
-        <ProductGrid products={featuredProducts} />
       </div>
 
       <div className="border-2 border-black bg-retro-cream p-4 text-center mb-8">

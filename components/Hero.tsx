@@ -3,17 +3,12 @@ import Link from "next/link";
 
 export default function Hero() {
   return (
-    <div className="relative border-4 border-black shadow-[6px_6px_0px_#000] p-8 md:p-12 mb-8 transition-all duration-300 ease-out hover:scale-[1.01] hover:shadow-[8px_8px_0px_#000] overflow-hidden" style={{ borderWidth: "4px", backgroundImage: "url('/perro.jpg')", backgroundSize: "cover", backgroundPosition: "center", backgroundRepeat: "no-repeat" }}>
+    <div className="relative border-4 border-black shadow-[6px_6px_0px_#000] p-8 md:p-12 mb-8 transition-all duration-300 ease-out hover:scale-[1.01] hover:shadow-[8px_8px_0px_#000] overflow-hidden" style={{ borderWidth: "4px", backgroundImage: "url('/perro.jpg')", backgroundSize: "cover", backgroundPosition: "center", backgroundRepeat: "no-repeat", fontFamily: 'Comic Sans MS, cursive, sans-serif' }}>
       {/* Overlay for text readability */}
       <div className="absolute inset-0 bg-[#f4f4f1]/65 backdrop-blur-[1px] z-0" />
 
       {/* Content */}
       <div className="relative z-10">
-        {/* Decorative elements */}
-        <div className="text-center mb-6">
-          <span className="text-2xl">✦ ✧ ✩</span>
-        </div>
-
         {/* Main title */}
         <h1 className="text-4xl md:text-6xl font-bold text-center mb-4">
           h!gher sh!t
@@ -22,11 +17,6 @@ export default function Hero() {
         {/* Subtitle */}
         <p className="text-xl md:text-2xl text-center mb-4">
           spiritual clothes for internet souls
-        </p>
-
-        {/* Description */}
-        <p className="text-center mb-6 text-sm md:text-base">
-          ropa para almas digitales, energía dosmilera y archivos perdidos de internet
         </p>
 
         {/* Banner */}

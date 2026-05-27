@@ -5,9 +5,12 @@ import Image from "next/image";
 
 export default function Header() {
   return (
-    <header className="relative border-b-4 border-black shadow-[0_5px_0px_#000] bg-gradient-to-r from-black via-[#111111] to-black">
+    <header className="relative border-b-4 border-black shadow-[0_5px_0px_#000] overflow-hidden" style={{ backgroundImage: "url('/header.gif')", backgroundSize: "cover", backgroundPosition: "center", backgroundRepeat: "no-repeat" }}>
+      {/* Dark overlay for text readability */}
+      <div className="absolute inset-0 bg-black/45 z-0" />
+
       {/* Scanlines effect */}
-      <div className="absolute inset-0 pointer-events-none opacity-20" style={{
+      <div className="absolute inset-0 pointer-events-none opacity-20 z-0" style={{
         backgroundImage: 'repeating-linear-gradient(to bottom, rgba(255,255,255,0.04) 0px, rgba(255,255,255,0.04) 1px, transparent 1px, transparent 4px)',
       }} />
 
@@ -38,33 +41,33 @@ export default function Header() {
 
           {/* Navigation bar with vertical separators */}
           <div className="border-t border-b border-black py-2 bg-black/30">
-            <nav className="flex items-center justify-center gap-1">
+            <nav className="flex items-center justify-center gap-1" style={{ fontFamily: 'Comic Sans MS, cursive, sans-serif' }}>
               <Link
                 href="/"
-                className="text-[#fff4c7] hover:text-[#f0f0f0] uppercase tracking-wide text-sm font-semibold px-3 py-1 transition-colors"
+                className="text-[#fff4c7] hover:text-[#f0f0f0] tracking-wide text-sm font-semibold px-3 py-1 transition-colors"
               >
-                INICIO
+                Inicio
               </Link>
               <span className="text-[#fff4c7] text-sm">|</span>
               <Link
                 href="/catalogo"
-                className="text-[#fff4c7] hover:text-[#f0f0f0] uppercase tracking-wide text-sm font-semibold px-3 py-1 transition-colors"
+                className="text-[#fff4c7] hover:text-[#f0f0f0] tracking-wide text-sm font-semibold px-3 py-1 transition-colors"
               >
-                CATÁLOGO
+                Catálogo
               </Link>
               <span className="text-[#fff4c7] text-sm">|</span>
               <Link
                 href="/nosotros"
-                className="text-[#fff4c7] hover:text-[#f0f0f0] uppercase tracking-wide text-sm font-semibold px-3 py-1 transition-colors"
+                className="text-[#fff4c7] hover:text-[#f0f0f0] tracking-wide text-sm font-semibold px-3 py-1 transition-colors"
               >
-                NOSOTROS
+                Nosotros
               </Link>
               <span className="text-[#fff4c7] text-sm">|</span>
               <Link
                 href="/contacto"
-                className="text-[#fff4c7] hover:text-[#f0f0f0] uppercase tracking-wide text-sm font-semibold px-3 py-1 transition-colors"
+                className="text-[#fff4c7] hover:text-[#f0f0f0] tracking-wide text-sm font-semibold px-3 py-1 transition-colors"
               >
-                CONTACTO
+                Contacto
               </Link>
             </nav>
           </div>
@@ -96,33 +99,33 @@ export default function Header() {
 
             {/* Navigation bar */}
             <div className="border-t border-b border-black py-2 bg-black/30 w-full">
-              <nav className="flex flex-wrap items-center justify-center gap-1 text-xs">
+              <nav className="flex flex-wrap items-center justify-center gap-1 text-xs" style={{ fontFamily: 'Comic Sans MS, cursive, sans-serif' }}>
                 <Link
                   href="/"
-                  className="text-[#fff4c7] hover:text-[#f4f4f1] uppercase tracking-wide font-semibold px-2 py-1 transition-colors"
+                  className="text-[#fff4c7] hover:text-[#f4f4f1] tracking-wide font-semibold px-2 py-1 transition-colors"
                 >
-                  INICIO
+                  Inicio
                 </Link>
                 <span className="text-[#fff4c7]">|</span>
                 <Link
                   href="/catalogo"
-                  className="text-[#fff4c7] hover:text-[#f4f4f1] uppercase tracking-wide font-semibold px-2 py-1 transition-colors"
+                  className="text-[#fff4c7] hover:text-[#f4f4f1] tracking-wide font-semibold px-2 py-1 transition-colors"
                 >
-                  CATÁLOGO
+                  Catálogo
                 </Link>
                 <span className="text-[#fff4c7]">|</span>
                 <Link
                   href="/nosotros"
-                  className="text-[#fff4c7] hover:text-[#f4f4f1] uppercase tracking-wide font-semibold px-2 py-1 transition-colors"
+                  className="text-[#fff4c7] hover:text-[#f4f4f1] tracking-wide font-semibold px-2 py-1 transition-colors"
                 >
-                  NOSOTROS
+                  Nosotros
                 </Link>
                 <span className="text-[#fff4c7]">|</span>
                 <Link
                   href="/contacto"
-                  className="text-[#fff4c7] hover:text-[#f4f4f1] uppercase tracking-wide font-semibold px-2 py-1 transition-colors"
+                  className="text-[#fff4c7] hover:text-[#f4f4f1] tracking-wide font-semibold px-2 py-1 transition-colors"
                 >
-                  CONTACTO
+                  Contacto
                 </Link>
               </nav>
             </div>
