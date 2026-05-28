@@ -4,6 +4,8 @@ import RetroButton from "@/components/RetroButton";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 
+export const dynamic = 'force-dynamic';
+
 export default function SuccessPage() {
   const searchParams = useSearchParams();
   const token = searchParams.get("token");
