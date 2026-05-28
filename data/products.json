@@ -1,0 +1,74 @@
+[
+  {
+    "id": "prod_1",
+    "slug": "polera-aura-digital",
+    "name": "Polera Aura Digital",
+    "price": 19990,
+    "category": "Poleras",
+    "description": "Energía digital capturada en tela. Diseño minimalista con estética de archivos perdidos.",
+    "image": "/products/aura-digital.jpg",
+    "badge": "new",
+    "createdAt": "2026-05-28T00:00:00.000Z",
+    "updatedAt": "2026-05-28T00:00:00.000Z"
+  },
+  {
+    "id": "prod_2",
+    "slug": "hoodie-internet-angel",
+    "name": "Hoodie Internet Angel",
+    "price": 34990,
+    "category": "Hoodies",
+    "description": "Protección espiritual para tus navegaciones. Comodidad angelical para almas digitales.",
+    "image": "/products/internet-angel.jpg",
+    "badge": "limited",
+    "createdAt": "2026-05-28T00:00:00.000Z",
+    "updatedAt": "2026-05-28T00:00:00.000Z"
+  },
+  {
+    "id": "prod_3",
+    "slug": "polera-web-2000",
+    "name": "Polera Web 2000",
+    "price": 21990,
+    "category": "Poleras",
+    "description": "Nostalgia pura de la web primitiva. Cuando cada sitio tenía alma propia.",
+    "image": "/products/web-2000.jpg",
+    "badge": "drop",
+    "createdAt": "2026-05-28T00:00:00.000Z",
+    "updatedAt": "2026-05-28T00:00:00.000Z"
+  },
+  {
+    "id": "prod_4",
+    "slug": "pantalon-star-archive",
+    "name": "Pantalón Star Archive",
+    "price": 29990,
+    "category": "Pantalones",
+    "description": "Archivos estelares cosechados de servidores olvidados. Corte cómodo y retro.",
+    "image": "/products/star-archive.jpg",
+    "badge": "online only",
+    "createdAt": "2026-05-28T00:00:00.000Z",
+    "updatedAt": "2026-05-28T00:00:00.000Z"
+  },
+  {
+    "id": "prod_5",
+    "slug": "beanie-higher-mind",
+    "name": "Beanie Higher Mind",
+    "price": 12990,
+    "category": "Accesorios",
+    "description": "Eleva tu consciencia digital. Calidez para mentes conectadas.",
+    "image": "/products/higher-mind.jpg",
+    "badge": "new",
+    "createdAt": "2026-05-28T00:00:00.000Z",
+    "updatedAt": "2026-05-28T00:00:00.000Z"
+  },
+  {
+    "id": "prod_6",
+    "slug": "polera-lost-website",
+    "name": "Polera Lost Website",
+    "price": 22990,
+    "category": "Poleras",
+    "description": "Fragmentos de sitios que ya no existen. Memoria web tejida en algodón.",
+    "image": "/products/lost-website.jpg",
+    "badge": "limited",
+    "createdAt": "2026-05-28T00:00:00.000Z",
+    "updatedAt": "2026-05-28T00:00:00.000Z"
+  }
+]

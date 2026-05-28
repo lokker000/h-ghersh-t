@@ -1,0 +1,2 @@
+// Using JSON-based persistence instead of Prisma
+// See lib/db.ts for database operations
