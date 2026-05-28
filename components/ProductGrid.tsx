@@ -1,5 +1,16 @@
-import { Product } from "@/data/products";
 import ProductCard from "./ProductCard";
+
+interface Product {
+  id: string;
+  slug: string;
+  name: string;
+  price: number;
+  category: string;
+  description: string;
+  image: string;
+  badge?: string;
+  checkoutUrl?: string;
+}
 
 interface ProductGridProps {
   products: Product[];

@@ -1,3 +1,5 @@
+"use client";
+
 import RetroButton from "@/components/RetroButton";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";

@@ -1,17 +1,27 @@
-import { Product } from "@/data/products";
+interface Product {
+  id: string;
+  slug: string;
+  name: string;
+  price: number;
+  category: string;
+  description: string;
+  image: string;
+  badge?: string;
+  checkoutUrl?: string;
+}
 
 /**
  * FLOW.CL INTEGRATION
- * 
+ *
  * This file handles Flow.cl payment integration for real purchases.
- * 
+ *
  * REQUIREMENTS:
  * - Configure environment variables in env-config.txt:
  *   - FLOW_API_KEY
  *   - FLOW_SECRET_KEY
  *   - FLOW_API_URL
  *   - NEXT_PUBLIC_BASE_URL
- * 
+ *
  * The integration works as follows:
  * 1. createFlowPayment() calls the Flow API to create a payment order
  * 2. Flow returns a payment URL where the user is redirected
@@ -36,7 +46,7 @@ interface CreatePaymentRequest {
 
 /**
  * Creates a Flow payment for a product
- * 
+ *
  * @param product - The product to create payment for
  * @param customerEmail - Customer email address
  * @param customerName - Customer name (optional)
@@ -49,7 +59,7 @@ export async function createFlowPayment(
 ): Promise<FlowPaymentResponse> {
   try {
     const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000";
-    
+
     const requestBody: CreatePaymentRequest = {
       productId: product.id,
       productName: product.name,
@@ -89,7 +99,7 @@ export async function createFlowPayment(
 /**
  * Handles the "Buy Now" button click
  * Creates a Flow payment and redirects to Flow's checkout
- * 
+ *
  * @param product - The product being purchased
  * @param customerEmail - Customer email address
  * @param customerName - Customer name (optional)
@@ -100,7 +110,7 @@ export async function handleBuyNow(
   customerName?: string
 ) {
   const response = await createFlowPayment(product, customerEmail, customerName);
-  
+
   if (response.url) {
     window.location.href = response.url;
   } else {

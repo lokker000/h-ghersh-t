@@ -1,9 +1,20 @@
 "use client";
 
-import { Product } from "@/data/products";
 import Badge from "./Badge";
 import RetroButton from "./RetroButton";
-import { handleBuyNow } from "@/lib/flow";
+import Link from "next/link";
+
+interface Product {
+  id: string;
+  slug: string;
+  name: string;
+  price: number;
+  category: string;
+  description: string;
+  image: string;
+  badge?: string;
+  checkoutUrl?: string;
+}
 
 interface ProductCardProps {
   product: Product;
@@ -39,13 +50,14 @@ export default function ProductCard({ product }: ProductCardProps) {
 
         {/* Buttons */}
         <div className="space-y-2">
-          <RetroButton
-            onClick={() => handleBuyNow(product)}
-            variant="white"
-            className="w-full"
-          >
-            Comprar ahora
-          </RetroButton>
+          <Link href={`/checkout/${product.id}`}>
+            <RetroButton
+              variant="white"
+              className="w-full"
+            >
+              Comprar ahora
+            </RetroButton>
+          </Link>
         </div>
       </div>
     </div>
