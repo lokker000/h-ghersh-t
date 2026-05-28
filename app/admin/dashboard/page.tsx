@@ -1,7 +1,6 @@
 "use client";
 
 import { useRouter } from "next/navigation";
-import { useState, useEffect } from "react";
 
 interface Order {
   id: string;
@@ -16,35 +15,34 @@ interface Order {
 
 export default function DashboardPage() {
   const router = useRouter();
-  const [orders, setOrders] = useState<Order[]>([]);
-  const [isLoading, setIsLoading] = useState(true);
+
+  // Mock orders - in production, this would come from a database
+  const orders: Order[] = [
+    {
+      id: "ORD-001",
+      customerEmail: "cliente1@example.com",
+      productName: "Polera Aura Digital",
+      price: 19990,
+      status: "paid",
+      date: "2026-05-27",
+    },
+    {
+      id: "ORD-002",
+      customerEmail: "cliente2@example.com",
+      productName: "Hoodie Internet Angel",
+      price: 34990,
+      status: "pending",
+      date: "2026-05-28",
+    },
+  ];
 
   // Check authentication on mount
   const isAuthenticated = typeof window !== "undefined" && localStorage.getItem("adminAuth") === "true";
 
-  useEffect(() => {
-    if (!isAuthenticated) {
-      router.push("/admin");
-      return;
-    }
-
-    const loadOrders = async () => {
-      try {
-        const response = await fetch("/api/orders");
-        const data = await response.json();
-        setOrders(data);
-      } catch (error) {
-        console.error("Error loading orders:", error);
-      } finally {
-        setIsLoading(false);
-      }
-    };
-
-    loadOrders();
-  }, [isAuthenticated, router]);
-
-  if (!isAuthenticated) return null;
-  if (isLoading) return <div className="text-center py-8">cargando...</div>;
+  if (!isAuthenticated) {
+    router.push("/admin");
+    return null;
+  }
 
   const totalRevenue = orders
     .filter((o) => o.status === "paid")

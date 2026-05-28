@@ -1,20 +1,9 @@
 "use client";
 
+import { Product } from "@/data/products";
 import Badge from "./Badge";
 import RetroButton from "./RetroButton";
 import Link from "next/link";
-
-interface Product {
-  id: string;
-  slug: string;
-  name: string;
-  price: number;
-  category: string;
-  description: string;
-  image: string;
-  badge?: string;
-  checkoutUrl?: string;
-}
 
 interface ProductCardProps {
   product: Product;

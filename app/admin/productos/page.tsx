@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
+import { products } from "@/data/products";
 
 interface Product {
   id: string;
@@ -19,30 +20,15 @@ export default function ProductosPage() {
   const router = useRouter();
   const [isEditing, setIsEditing] = useState(false);
   const [editingProduct, setEditingProduct] = useState<Product | null>(null);
-  const [productList, setProductList] = useState<Product[]>([]);
-  const [isLoading, setIsLoading] = useState(true);
+  const [productList] = useState<Product[]>(products);
 
   // Check authentication
   const isAuthenticated = typeof window !== "undefined" && localStorage.getItem("adminAuth") === "true";
 
-  const loadProducts = async () => {
-    try {
-      const response = await fetch("/api/products");
-      const data = await response.json();
-      setProductList(data);
-    } catch (error) {
-      console.error("Error loading products:", error);
-    } finally {
-      setIsLoading(false);
-    }
-  };
-
   useEffect(() => {
     if (!isAuthenticated) {
       router.push("/admin");
-      return;
     }
-    loadProducts();
   }, [isAuthenticated, router]);
 
   if (!isAuthenticated) return null;
@@ -52,45 +38,13 @@ export default function ProductosPage() {
     setIsEditing(true);
   };
 
-  const handleDelete = async (productId: string) => {
-    if (confirm("¿Estás seguro de eliminar este producto?")) {
-      try {
-        const response = await fetch(`/api/products/${productId}`, {
-          method: "DELETE",
-        });
-        if (response.ok) {
-          await loadProducts();
-        } else {
-          alert("Error al eliminar producto");
-        }
-      } catch (error) {
-        console.error("Error deleting product:", error);
-        alert("Error al eliminar producto");
-      }
-    }
+  const handleDelete = () => {
+    alert("Funcionalidad no implementada");
   };
 
-  const handleSave = async (e: React.FormEvent) => {
+  const handleSave = (e: React.FormEvent) => {
     e.preventDefault();
-    if (editingProduct) {
-      try {
-        const response = await fetch(`/api/products/${editingProduct.id}`, {
-          method: "PUT",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(editingProduct),
-        });
-        if (response.ok) {
-          await loadProducts();
-          setIsEditing(false);
-          setEditingProduct(null);
-        } else {
-          alert("Error al guardar producto");
-        }
-      } catch (error) {
-        console.error("Error saving product:", error);
-        alert("Error al guardar producto");
-      }
-    }
+    alert("Funcionalidad no implementada");
   };
 
   const handleCancel = () => {
@@ -99,7 +53,6 @@ export default function ProductosPage() {
   };
 
   if (!isAuthenticated) return null;
-  if (isLoading) return <div className="text-center py-8">cargando...</div>;
 
   if (isEditing && editingProduct) {
     return (
@@ -257,7 +210,7 @@ export default function ProductosPage() {
                         editar
                       </button>
                       <button
-                        onClick={() => handleDelete(product.id)}
+                        onClick={handleDelete}
                         className="px-3 py-1 border border-black text-xs hover:bg-red-200"
                       >
                         eliminar

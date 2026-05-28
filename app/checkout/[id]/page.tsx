@@ -1,21 +1,10 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
+import { getProductById } from "@/data/products";
 import { handleBuyNow } from "@/lib/flow";
 import RetroButton from "@/components/RetroButton";
 import Link from "next/link";
-
-interface Product {
-  id: string;
-  slug: string;
-  name: string;
-  price: number;
-  category: string;
-  description: string;
-  image: string;
-  badge?: string;
-  checkoutUrl?: string;
-}
 
 interface CheckoutPageProps {
   params: {
@@ -24,23 +13,10 @@ interface CheckoutPageProps {
 }
 
 export default function CheckoutPage({ params }: CheckoutPageProps) {
-  const [product, setProduct] = useState<Product | null>(null);
+  const product = getProductById(params.id);
   const [email, setEmail] = useState("");
   const [name, setName] = useState("");
   const [isProcessing, setIsProcessing] = useState(false);
-
-  useEffect(() => {
-    const loadProduct = async () => {
-      try {
-        const response = await fetch(`/api/products/${params.id}`);
-        const data = await response.json();
-        setProduct(data);
-      } catch (error) {
-        console.error("Error loading product:", error);
-      }
-    };
-    loadProduct();
-  }, [params.id]);
 
   if (!product) {
     return (

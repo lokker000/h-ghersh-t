@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { useRouter } from "next/navigation";
 
 interface Order {
@@ -17,51 +17,37 @@ interface Order {
 export default function OrdenesPage() {
   const router = useRouter();
   const [selectedOrder, setSelectedOrder] = useState<Order | null>(null);
-  const [orders, setOrders] = useState<Order[]>([]);
-  const [isLoading, setIsLoading] = useState(true);
+
+  // Mock orders
+  const orders: Order[] = [
+    {
+      id: "ORD-001",
+      customerEmail: "cliente1@example.com",
+      productName: "Polera Aura Digital",
+      price: 19990,
+      status: "paid",
+      date: "2026-05-27",
+    },
+    {
+      id: "ORD-002",
+      customerEmail: "cliente2@example.com",
+      productName: "Hoodie Internet Angel",
+      price: 34990,
+      status: "pending",
+      date: "2026-05-28",
+    },
+  ];
 
   // Check authentication
   const isAuthenticated = typeof window !== "undefined" && localStorage.getItem("adminAuth") === "true";
 
-  const loadOrders = async () => {
-    try {
-      const response = await fetch("/api/orders");
-      const data = await response.json();
-      setOrders(data);
-    } catch (error) {
-      console.error("Error loading orders:", error);
-    } finally {
-      setIsLoading(false);
-    }
-  };
+  if (!isAuthenticated) {
+    router.push("/admin");
+    return null;
+  }
 
-  useEffect(() => {
-    if (!isAuthenticated) {
-      router.push("/admin");
-      return;
-    }
-    loadOrders();
-  }, [isAuthenticated, router]);
-
-  if (!isAuthenticated) return null;
-  if (isLoading) return <div className="text-center py-8">cargando...</div>;
-
-  const updateOrderStatus = async (orderId: string, newStatus: Order["status"]) => {
-    try {
-      const response = await fetch(`/api/orders/${orderId}`, {
-        method: "PUT",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ status: newStatus }),
-      });
-      if (response.ok) {
-        await loadOrders();
-      } else {
-        alert("Error al actualizar estado");
-      }
-    } catch (error) {
-      console.error("Error updating order:", error);
-      alert("Error al actualizar estado");
-    }
+  const updateOrderStatus = (orderId: string, newStatus: Order["status"]) => {
+    alert(`Estado de orden ${orderId} actualizado a ${newStatus}`);
   };
 
   const getStatusColor = (status: Order["status"]) => {

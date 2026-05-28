@@ -4,8 +4,6 @@ import RetroButton from "@/components/RetroButton";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 
-export const dynamic = 'force-dynamic';
-
 export default function SuccessPage() {
   const searchParams = useSearchParams();
   const token = searchParams.get("token");
@@ -30,20 +28,20 @@ export default function SuccessPage() {
         {/* Order details */}
         <div className="border-4 border-black bg-retro-white p-6 shadow-[4px_4px_0px_#000] mb-8">
           <h2 className="text-2xl font-bold mb-4">✦ detalles de la orden ✦</h2>
-          
+
           <div className="space-y-3">
             <div className="flex justify-between border-b border-gray-200 pb-2">
               <span className="font-semibold">estado:</span>
               <span className="text-green-600 font-bold">pagado</span>
             </div>
-            
+
             {token && (
               <div className="flex justify-between border-b border-gray-200 pb-2">
                 <span className="font-semibold">token de transacción:</span>
                 <span className="font-mono text-sm">{token}</span>
               </div>
             )}
-            
+
             <div className="flex justify-between border-b border-gray-200 pb-2">
               <span className="font-semibold">fecha:</span>
               <span>{new Date().toLocaleDateString("es-CL")}</span>
@@ -54,7 +52,7 @@ export default function SuccessPage() {
         {/* Next steps */}
         <div className="border-4 border-black bg-retro-cream p-6 shadow-[4px_4px_0px_#000] mb-8">
           <h3 className="text-xl font-bold mb-4">✧ qué sigue ✧</h3>
-          
+
           <ul className="space-y-2 text-sm">
             <li className="flex items-start">
               <span className="mr-2">•</span>
